@@ -22,7 +22,7 @@ database = 'YOUR DATABASE NAME'
 port = 3306 ### usually 3306 but it can be a different one
 
 ### esto es para el FlaskLogin, sin esto genera error
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = 'YOUR SECRET KEY'
 
 app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql://{user}:{password}@{host}:{port}/{database}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
