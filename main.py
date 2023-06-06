@@ -15,11 +15,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 
 
-host = '127.0.0.1'
-user = 'PythonUser'
-password = 'Python2022%'
-database = 'prueba'
-port = 3306
+host = 'YOUR SERVER'
+user = 'YOUR USER'
+password = 'YOUR PASSWORD'
+database = 'YOUR DATABASE NAME'
+port = 3306 ### usually 3306 but it can be a different one
 
 ### esto es para el FlaskLogin, sin esto genera error
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
