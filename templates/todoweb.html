@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>My ToDo List</h1>
+    <hr>
+    <!-- <div class="box_1">    
+        {% for todo in todo_show %}
+
+            <h3 class="list-todo">{{todo.description}}          
+                      
+                {% if todo.completed %} 
+                <form action="{{ url_for('todoweb', todo_id=todo.id) }}" method="POST">
+                    
+                    <div class="d-grid gap-2 d-md-block">
+                        <button type="submit" class="btn btn-primary btn-block btn-sm btn-todo">Remove completed</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-sm btn-todo">Remove completed</button>
+                    </div>
+                    
+                </form>
+                {% else %}
+                <form action="{{ url_for('todoweb', todo_id=todo.id) }}" method="POST">
+                    
+                    <div class="d-grid gap-2 d-md-block">
+                        <button type="submit" class="btn btn-primary btn-block btn-sm btn-todo">Mark as Completed</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-sm btn-todo">Mark as Completed</button>
+                    </div>
+                    
+                </form>
+                {% endif %}
+
+            </h3>
+            
+                <p>Posted on {{todo.created_at}}</p>
+        <hr>
+        {% endfor %}
+
+    </div> -->
+
+
+
+    <div class="box_1">    
+        {% for todo in todo_show %}
+            <div class="">
+                <h3 class="list-todo">{{todo.description}}
+                {% if todo.completed %} 
+                <form action="{{ url_for('todoweb', todo_id=todo.id) }}" method="POST">
+                    
+                    <div class="d-grid gap-2 d-md-block">
+                        <button type="submit" class="btn btn-primary btn-block btn-sm btn-todo">Remove completed</button>
+                        <!-- <button type="submit" class="btn btn-primary btn-block btn-sm btn-todo">Remove completed</button> -->
+                    </div>
+                    <!-- <div class="form-check form-switch">
+                        <input class="form-check-input" name="test" type="checkbox" role="switch" id="test_id" checked>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Remove completed</label>
+                    </div> -->
+                </form>
+                {% else %}
+                <form action="{{ url_for('todoweb', todo_id=todo.id) }}" method="POST">
+                    
+                    <div class="d-grid gap-2 d-md-block">
+                        <button type="submit" class="btn btn-primary btn-block btn-sm btn-todo">Mark as Completed</button>
+                        <!-- <button type="submit" class="btn btn-primary btn-block btn-sm btn-todo">Mark as Completed</button> -->
+                    </div>
+                    
+                </form>
+                {% endif %}
+                </h3>
+            </div>
+
+            <p>Posted on {{todo.created_at}}</p>
+        <hr>
+        {% endfor %}
+
+    </div>
+
+
+
+
+
+</div>
+
+<div class="container">
+    <div class="box_1">
+
+        <h1>New ToDo</h1>
+
+        <form action="{{ url_for('todoweb')}}" method="POST">
+
+            <input type="text" name="description" placeholder="Description" required="required"/>
+
+            <button type="submit" class="btn btn-todo btn-primary btn-block btn-large">Save.</button>
+        </form>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
